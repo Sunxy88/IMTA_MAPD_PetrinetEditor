@@ -1,4 +1,4 @@
-package xin.xisx.bean;
+package xin.xisx.petrinet.bean;
 
 import org.junit.Assert;
 import org.junit.Before;

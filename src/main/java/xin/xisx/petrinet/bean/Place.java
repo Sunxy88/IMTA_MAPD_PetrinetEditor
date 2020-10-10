@@ -19,7 +19,18 @@ public class Place {
     }
 
     public Place(String name, Integer coin) {
+        if (coin < 0) {
+            throw new NotEnoughCoinException();
+        }
         this.name = name;
+        this.coin = coin;
+    }
+
+    public Place(Integer coin) {
+        this();
+        if (coin < 0) {
+            throw new NotEnoughCoinException();
+        }
         this.coin = coin;
     }
 
@@ -28,6 +39,9 @@ public class Place {
      * @param i Number of coins
      */
     public void addCoin(Integer i) {
+        if (i < 0 && coin + i < 0) {
+            throw new NotEnoughCoinException();
+        }
         this.setCoin(this.getCoin() + i);
     }
 
