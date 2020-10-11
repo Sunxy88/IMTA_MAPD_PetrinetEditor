@@ -6,20 +6,26 @@ import xin.xisx.petrinet.bean.Transition;
 
 import java.util.List;
 
+/**
+ * @author Xi Song
+ */
 public interface IPetriNet {
 
     /**
      * Add an arc to this net.
+     * @param arc
      */
     void addArc(Arc arc);
 
     /**
      * Add a transition to this net.
+     * @param transition
      */
     void addTransition(Transition transition);
 
     /**
      * Add a place to this net.
+     * @param place
      */
     void addPlace(Place place);
 
@@ -39,6 +45,7 @@ public interface IPetriNet {
 
     /**
      * Set the start and the destination of an arc and corresponding direction
+     * @param index
      * @param place
      * @param transition
      * @param p2t Indicate the direction of this arc. If it is true, it means that the destination is transition.
@@ -47,6 +54,7 @@ public interface IPetriNet {
 
     /**
      * Set the place of an arc and corresponding direction
+     * @param index
      * @param place
      * @param p2t Set the start and the destination of an arc and corresponding direction
      */
@@ -54,6 +62,7 @@ public interface IPetriNet {
 
     /**
      * Set the transition of an arc and corresponding direction
+     * @param index
      * @param transition
      * @param p2t Set the start and the destination of an arc and corresponding direction
      */
@@ -76,6 +85,27 @@ public interface IPetriNet {
      * @param index The index of the arc
      */
     void removeArc(Integer index);
+
+    /**
+     * Get indexth place.
+     * @param index
+     * @return
+     */
+    Place getPlace(Integer index);
+
+    /**
+     * Get indexth arc.
+     * @param index
+     * @return
+     */
+    Arc getArc(Integer index);
+
+    /**
+     * Get indexth transition.
+     * @param index
+     * @return
+     */
+    Transition getTransition(Integer index);
 
     /**
      * Trigger one transition.

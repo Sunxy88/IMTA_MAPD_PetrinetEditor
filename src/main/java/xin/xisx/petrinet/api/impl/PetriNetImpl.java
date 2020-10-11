@@ -116,6 +116,9 @@ public class PetriNetImpl implements IPetriNet {
         if (bothSideNotNull && arcList.contains(tmpArc)) {
             throw new ItemAlreadyExistsException(Constants.ARC_ALREADY_EXISTS);
         }
+        if (transition != null) {
+            transition.addArc(arc);
+        }
         arc.attachArc(place, transition, p2t);
     }
 
@@ -189,6 +192,26 @@ public class PetriNetImpl implements IPetriNet {
             }
         }
     }
+
+
+    @Override
+    public Place getPlace(Integer index) {
+        isIndexLegalPlace(index);
+        return placeList.get(index);
+    }
+
+    @Override
+    public Arc getArc(Integer index) {
+        isIndexLegalArc(index);
+        return arcList.get(index);
+    }
+
+    @Override
+    public Transition getTransition(Integer index) {
+        isIndexLegalTransition(index);
+        return transitionList.get(index);
+    }
+
 
     /**
      *  Trigger one transition
