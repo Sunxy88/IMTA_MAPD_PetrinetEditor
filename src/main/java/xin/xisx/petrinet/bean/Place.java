@@ -2,6 +2,9 @@ package xin.xisx.petrinet.bean;
 
 import xin.xisx.petrinet.common.exception.NotEnoughCoinException;
 
+/**
+ * @author Xi Song
+ */
 public class Place {
 
     private static Integer nums = 0;
@@ -9,15 +12,27 @@ public class Place {
     private String name;
     private Integer coin;
 
+    /**
+     * Automatically generate a name for instance and set coin to 0
+     */
     public Place() {
         this("P" + ++nums);
     }
 
+    /**
+     * Set coin to 0
+     * @param name The name of this instance
+     */
     public Place(String name) {
         this.name = name;
         this.coin = 0;
     }
 
+    /**
+     * Instantiate with given name and the number of coins.
+     * @param name The name of this instance.
+     * @param coin The number of coins.
+     */
     public Place(String name, Integer coin) {
         if (coin < 0) {
             throw new NotEnoughCoinException();
@@ -26,6 +41,10 @@ public class Place {
         this.coin = coin;
     }
 
+    /**
+     * Set coin to the given number
+     * @param coin The number of coins.
+     */
     public Place(Integer coin) {
         this();
         if (coin < 0) {
@@ -56,10 +75,18 @@ public class Place {
         this.addCoin(-i);
     }
 
+    /**
+     * Getter of coin
+     * @return
+     */
     public Integer getCoin() {
         return coin;
     }
 
+    /**
+     * Setter of coin
+     * @param coin
+     */
     public void setCoin(Integer coin) {
         this.coin = coin;
     }

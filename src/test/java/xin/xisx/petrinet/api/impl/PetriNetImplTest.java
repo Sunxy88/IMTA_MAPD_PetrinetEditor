@@ -71,47 +71,47 @@ public class PetriNetImplTest {
         petriNet.addTransition(transition3);
     }
 
-//    @Test
-//    public void addArc() {
-//        petriNet.addArc(arc1);
-//        petriNet.addArc(arc2);
-//        petriNet.addArc(arc3);
-//        petriNet.addArc(arc4);
-//        petriNet.addArc(arc5);
-//        petriNet.addArc(arc6);
-//        try {
-//            petriNet.addArc(arc6);
-//            fail("Should throw an ItemAlreadyExistsException");
-//        } catch (Exception e) {
-//            assertTrue(e instanceof ItemAlreadyExistsException);
-//        }
-//    }
-//
-//    @Test
-//    public void addTransition() {
-//        petriNet.addTransition(transition1);
-//        petriNet.addTransition(transition2);
-//        petriNet.addTransition(transition3);
-//        try {
-//            petriNet.addTransition(transition3);
-//            fail("Should throw an ItemAlreadyExistsException");
-//        } catch (Exception e) {
-//            assertTrue(e instanceof ItemAlreadyExistsException);
-//        }
-//    }
-//
-//    @Test
-//    public void addPlace() {
-//        petriNet.addPlace(place1);
-//        petriNet.addPlace(place2);
-//        petriNet.addPlace(place3);
-//        try {
-//            petriNet.addPlace(place3);
-//            fail("Should throw an ItemAlreadyExistsException");
-//        } catch (Exception e) {
-//            assertTrue(e instanceof ItemAlreadyExistsException);
-//        }
-//    }
+    @Test
+    public void addArc() {
+        try {
+            petriNet.addArc(arc1);
+            petriNet.addArc(arc2);
+            petriNet.addArc(arc3);
+            petriNet.addArc(arc4);
+            petriNet.addArc(arc5);
+            petriNet.addArc(arc6);
+            petriNet.addArc(arc6);
+            fail("Should throw an ItemAlreadyExistsException");
+        } catch (Exception e) {
+            assertTrue(e instanceof ItemAlreadyExistsException);
+        }
+    }
+
+    @Test
+    public void addTransition() {
+        try {
+            petriNet.addTransition(transition1);
+            petriNet.addTransition(transition2);
+            petriNet.addTransition(transition3);
+            petriNet.addTransition(transition3);
+            fail("Should throw an ItemAlreadyExistsException");
+        } catch (Exception e) {
+            assertTrue(e instanceof ItemAlreadyExistsException);
+        }
+    }
+
+    @Test
+    public void addPlace() {
+        try {
+            petriNet.addPlace(place1);
+            petriNet.addPlace(place2);
+            petriNet.addPlace(place3);
+            petriNet.addPlace(place3);
+            fail("Should throw an ItemAlreadyExistsException");
+        } catch (Exception e) {
+            assertTrue(e instanceof ItemAlreadyExistsException);
+        }
+    }
 
     @Test
     public void setCoinOfPlace() {

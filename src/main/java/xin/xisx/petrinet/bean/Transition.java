@@ -20,15 +20,27 @@ public class Transition {
         this("T" + ++nums);
     }
 
+    /**
+     * Instantiation with the given name.
+     * @param name The name of this instance
+     */
     public Transition(String name) {
         this.name = name;
         this.arcList = new ArrayList<>();
     }
 
+    /**
+     * Add an new arc to this transition.
+     * @param arc
+     */
     public void addArc(Arc arc) {
         this.arcList.add(arc);
     }
 
+    /**
+     * Remove an arc from the list.
+     * @param index The index of this arc in the list.
+     */
     public void removeArc(Integer index) {
         if (index < 0 || index >= arcList.size()) {
             throw new IllegalIndexException("Illegal index, index should be between" + 0 + " and " + arcList.size());
@@ -61,6 +73,7 @@ public class Transition {
         return true;
     }
 
+    // Getter and setter
     public static Integer getNums() {
         return nums;
     }

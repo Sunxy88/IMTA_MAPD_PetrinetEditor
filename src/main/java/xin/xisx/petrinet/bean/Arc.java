@@ -21,10 +21,21 @@ public class Arc {
         this("A" + ++nums);
     }
 
+    /**
+     * Instantiation with the given name.
+     * @param name The name of this instance
+     */
     public Arc(String name) {
         this.name = name;
     }
 
+    /**
+     * Instantiation with also the attatchment
+     * @param fromPlace True if this arc goes from a place to a transition.
+     * @param weight The weight of this arc.
+     * @param place The place this arc connects.
+     * @param transition The transition this arc connects.
+     */
     public Arc(Boolean fromPlace, Integer weight, Place place, Transition transition) {
         this();
         if (weight < 0) {

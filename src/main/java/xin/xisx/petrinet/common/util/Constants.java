@@ -1,5 +1,8 @@
 package xin.xisx.petrinet.common.util;
 
+/**
+ * @author Xi Song
+ */
 public class Constants {
 
     public static final String ARC_ALREADY_EXISTS =
